@@ -8,13 +8,13 @@ services:
       shipyard.route: '/'
     depends_on:
       - db
-    expose:
+    ports:
       - 4567 # use a reverse proxy like Traefik
 
   db:
     image: mongo:bionic
     restart: unless-stopped
-    expose:
+    ports:
       - 27017
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
