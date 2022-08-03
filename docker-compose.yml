@@ -4,6 +4,8 @@ services:
   node:
     build: .
     restart: unless-stopped
+    labels:
+      shipyard.route: '/'
     depends_on:
       - db
     expose:
